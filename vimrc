@@ -19,6 +19,11 @@ nnoremap k gk
 
 inoremap jj <ESC>
 
+" Source the vimrc file after saving it
+if has("autocmd")
+    autocmd! bufwritepost .vimrc source $MYVIMRC
+endif
+
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
