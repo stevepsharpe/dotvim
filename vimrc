@@ -22,6 +22,7 @@ set tabstop=4
 set expandtab
 set smarttab
 set backspace=indent,eol,start
+set nowrap                        " don't wrap lines
 
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
@@ -132,3 +133,26 @@ endfunction
 
 " User space key to make highlighted search results disappear
 nnoremap <space> :nohlsearch<CR>/<BS>
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+""
+"" Backup and swap files
+""
+
+set backupdir=~/.vim/_backup//    " where to put backup files.
+set directory=~/.vim/_temp//      " where to put swap files.
+
+"let g:Powerline_symbols = 'fancy'
+
+if has("statusline") && !&cp
+  set laststatus=2  " always show the status bar
+
+  " Start the status line
+  "set statusline=%f\ %m\ %r
+  "set statusline+=Line:%l/%L[%p%%]
+  "set statusline+=Col:%v
+  "set statusline+=Buf:#%n
+  "set statusline+=[%b][0x%B]
+endif
